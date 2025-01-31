@@ -16,7 +16,7 @@ describe("Sorting functionality", () => {
     const inventoryContainer = await $("#inventory_container");
     await expect(inventoryContainer).toBeDisplayed();
 
-    //Add to cart
+    //To sort products
     await MenuPage.btnSort.click();
 
     const sortDropdown = await $(".product_sort_container");
@@ -25,7 +25,7 @@ describe("Sorting functionality", () => {
     const sortingMethods = ["az", "za", "lohi", "hilo"];
 
     for (const method of sortingMethods) {
-      await MenuPage.btnSort.click(); // Open dropdown before each selection
+      await MenuPage.btnSort.click();
       await sortDropdown.selectByAttribute("value", method);
     }
   });
