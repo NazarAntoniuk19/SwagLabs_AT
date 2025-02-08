@@ -149,6 +149,26 @@ class MenuPage extends Page {
     expect(mainPage).toBeDisplayed();
   }
 
+  async isCartTitleDisplayed() {
+    const cartTitle = await $(".title=Your Cart");
+    await expect(cartTitle).toBeDisplayed();
+  }
+
+  async isCartItemDisplayed() {
+    const cartItem = await $(".cart_item");
+    await expect(cartItem).not.toBeDisplayed();
+  }
+  async isCheckoutBtnDisplayed() {
+    const CheckoutButton = await $("#checkout");
+    await expect(CheckoutButton).toBeDisplayed();
+    await expect(CheckoutButton).toBeClickable();
+  }
+
+  async isEmptyCartMessageDisplayed() {
+    const emptyCartMessage = await $('//*[text()="Cart is empty"]');
+    await expect(emptyCartMessage).toBeDisplayed();
+  }
+
   open() {
     return super.open("inventory.html");
   }
