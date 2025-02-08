@@ -2,8 +2,8 @@ import loginPage from "../pageobjects/login.page.js";
 import menuPage from "../pageobjects/menu.page.js";
 
 async function returnPage() {
-  //await browser.closeWindow();
-  await menuPage.open();
+  await browser.closeWindow();
+  await browser.url("https://www.saucedemo.com/inventory.html");
 }
 
 async function homePage() {
@@ -16,23 +16,14 @@ describe("Footer functionality", () => {
     await loginPage.open();
     await loginPage.login("standard_user", "secret_sauce");
     await homePage();
-    await browser.pause(5000);
     await menuPage.clickTwitterLink();
-    await browser.pause(5000);
     await returnPage();
-    await browser.pause(5000);
     await homePage();
-    await browser.pause(5000);
     await menuPage.clickFacebookLink();
-    await browser.pause(5000);
     await returnPage();
-    await browser.pause(5000);
     await homePage();
-    await browser.pause(5000);
     await menuPage.clickLinkedInLink();
-    await browser.pause(5000);
     await returnPage();
-    await browser.pause(5000);
     await homePage();
   });
 });
