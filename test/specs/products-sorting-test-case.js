@@ -6,11 +6,9 @@ describe("Sorting functionality", () => {
     await loginPage.open();
     await loginPage.login("standard_user", "secret_sauce");
 
-    // Checking the availability of a block with products
     const inventoryContainer = await $("#inventory_container");
     await expect(inventoryContainer).toBeDisplayed();
 
-    //To sort products
     await menuPage.clickSortBtn();
 
     const sortDropdown = await $(".product_sort_container");
