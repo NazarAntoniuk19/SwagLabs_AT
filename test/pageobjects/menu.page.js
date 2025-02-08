@@ -126,9 +126,9 @@ class MenuPage extends Page {
   }
 
   async clickLinkedInLink() {
-    const LinkedInLink = await $(".social_linkedin");
-    await LinkedInLink.waitForClickable({ timeout: 5000 });
-    await LinkedInLink.click();
+    const linkedInLink = await $(".social_linkedin");
+    await linkedInLink.waitForClickable({ timeout: 5000 });
+    await linkedInLink.click();
   }
 
   get inventoryContainer() {
