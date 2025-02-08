@@ -131,6 +131,25 @@ class MenuPage extends Page {
     await LinkedInLink.click();
   }
 
+  get inventoryContainer() {
+    return $("#inventory_container");
+  }
+
+  async isInventoryDisplayed() {
+    await this.inventoryContainer.isDisplayed();
+  }
+
+  get errorMessage() {
+    return $('[data-test="error"]');
+  }
+
+  async isErrorDisplayed() {
+    await this.errorMessage.isDisplayed();
+    await this.errorMessage.getText();
+  }
+
+  // "Epic sadface: Username and password do not match any user in this service"
+
   open() {
     return super.open("inventory.html");
   }
