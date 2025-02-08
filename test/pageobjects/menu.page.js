@@ -139,6 +139,16 @@ class MenuPage extends Page {
     await this.inventoryContainer.isDisplayed();
   }
 
+  async isSideBarDisplayed() {
+    const sideBar = $(".bm-menu");
+    expect(sideBar).toBeDisplayed(".bm-item-list");
+  }
+
+  async isMainPageDisplayed() {
+    const mainPage = $(".login_container");
+    expect(mainPage).toBeDisplayed();
+  }
+
   open() {
     return super.open("inventory.html");
   }

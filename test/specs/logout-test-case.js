@@ -5,21 +5,10 @@ describe("Logout functionality", () => {
   it("should redirect to the Login page", async () => {
     await loginPage.open();
     await loginPage.login("standard_user", "secret_sauce");
-
-    // Checking the availability of a block with products
-    const inventoryContainer = $("#inventory_container");
-    expect(inventoryContainer).toBeDisplayed();
-
-    // To click on the "Burger" btn
+    await menuPage.isInventoryDisplayed();
     await menuPage.clickBurgerBtn();
-
-    const SideBar = $(".bm-menu");
-    expect(SideBar).toBeDisplayed(".bm-item-list");
-
-    // Logout function
+    await menuPage.isSideBarDisplayed();
     await menuPage.clickLogoutBtn();
-
-    const mainPage = $(".login_container");
-    expect(mainPage).toBeDisplayed();
+    await menuPage.isMainPageDisplayed();
   });
 });
