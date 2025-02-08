@@ -139,17 +139,6 @@ class MenuPage extends Page {
     await this.inventoryContainer.isDisplayed();
   }
 
-  get errorMessage() {
-    return $('[data-test="error"]');
-  }
-
-  async isErrorDisplayed() {
-    await this.errorMessage.isDisplayed();
-    await this.errorMessage.getText();
-  }
-
-  // "Epic sadface: Username and password do not match any user in this service"
-
   open() {
     return super.open("inventory.html");
   }
