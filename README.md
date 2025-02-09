@@ -9,6 +9,7 @@ This repository contains end-to-end (E2E) tests for the [SwagLabs](https://www.s
 - Automated test execution for key functionalities of SauceDemo
 - Uses WebdriverIO with JavaScript
 - Page Object Model (POM) for better test structure
+- Implements Mocha and Cucumber Frameworks
 - Supports parallel execution
 
 ## Prerequisites
@@ -30,23 +31,35 @@ npm install
 
 # Running Tests
 
+Run tests based on Mocha Framework:
+
+```sh
+npm run test:mocha
+```
+
+Run tests based on Cucumber Framework:
+
+```sh
+npm run test:cucumber
+```
 Run all tests:
 
 ```sh
-npx wdio run ./wdio.conf.js
-```
-
-Run specific test:
-
-```sh
-npx wdio run ./wdio.conf.js --spec test.e8e.js
+npm run test
 ```
 
 # Test Structure
 
-- /specs: Contains test scripts
-- /pageobjects: Implements Page Object Model (POM)
-- wdio.conf.js: Configuration file for WebdriverIO
+## Mocha Framework
+- `/test-mocha/specs`: Contains test scripts
+- `/test-mocha/pageobjects`: Implements Page Object Model (POM)
+- `mocha.conf.js`: WebdriverIO configuration file for Mocha Framework
+
+## Cucumber Framework
+- `/test-cucumber/features`: Contains features
+- `/test-cucumber/features/step-definitions`: Contains step definitions for features
+- `/test-cucumber/features/pageobjects`: Implements Page Object Model (POM)
+- `cucumber.conf.js`: WebdriverIO configuration file for Cucumber Framework
 
 # License
 
